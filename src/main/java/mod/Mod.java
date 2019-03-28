@@ -23,7 +23,7 @@ public class Mod {
     }
 
     public static void installMod(File original, File diff) {
-        String newfilePath = original.getPath().substring(0, original.getPath().length() - 4) + "-unmodded.dll";
+        String newfilePath = original.getPath().substring(0, original.getPath().length() - 4) + "-backup.dll";
         File unModdedCopy = new File(newfilePath);
         try {
             FileUtils.copyFile(original, unModdedCopy);
