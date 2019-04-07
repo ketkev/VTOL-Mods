@@ -1,7 +1,7 @@
 # VTOL Mods
 This is a small tool for installing and creating mods for the game VTOL VR. 
 
-![image](https://i.imgur.com/Jm0Z74O.png)
+![image](https://i.imgur.com/5Fvu8C3.png)
 
 ## Warning
 **Mods might cause your game to be unstable or crash, proceed with caution**
@@ -13,10 +13,16 @@ You can find the latest release in the release section:
 
 ## How to use it
 
-To install a modInstaller you have to select the .dll that's specified in the readme of the modInstaller and the .modInstaller itself.
+The `.jar` should be placed in the root folder of the game.
 
-Clicking install modInstaller will create a copy of the unmodded .dll which is marked as "-backup" and then it replaces the normal .dll with the modded one.
+When it's run for the first time it'll create a `mods` folder there, that's where you can drag `.mod` files and their corresponding `.cfg` files.
+
+When you restart the program it'll add these mods to the dropdown menu from where you can install and uninstall them with ease.
 
 ## Example mods
 Some example mods are included in the 'example' folder.
 These might be unstable and crash your game so proceed with caution.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
