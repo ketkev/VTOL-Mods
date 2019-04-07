@@ -13,9 +13,9 @@ You can find the latest release in the release section:
 
 ## How to use it
 
-To install a mod you have to select the .dll that's specified in the readme of the mod and the .mod itself.
+To install a modInstaller you have to select the .dll that's specified in the readme of the modInstaller and the .modInstaller itself.
 
-Clicking install mod will create a copy of the unmodded .dll which is marked as "-backup" and then it replaces the normal .dll with the modded one.
+Clicking install modInstaller will create a copy of the unmodded .dll which is marked as "-backup" and then it replaces the normal .dll with the modded one.
 
 ## Example mods
 Some example mods are included in the 'example' folder.

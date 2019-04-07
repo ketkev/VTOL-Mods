@@ -1,6 +1,6 @@
 package gui;
 
-import mod.Mod;
+import modInstaller.Mod;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

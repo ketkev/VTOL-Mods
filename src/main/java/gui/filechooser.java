@@ -1,5 +1,7 @@
 package gui;
 
+import modInstaller.Game;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.awt.*;
@@ -32,7 +34,7 @@ public class filechooser extends JDialog implements ActionListener {
         setSize(800, 600);
         setLayout(new FlowLayout());
         try {
-            fc = new JFileChooser(new File("C:\\Program Files (x86)\\Steam\\steamapps\\common\\VTOL VR\\VTOLVR_Data\\Managed"));
+            fc = new JFileChooser(new File(Game.getGamePath()));
         } catch (Exception ex) {
             ex.getLocalizedMessage();
             fc = new JFileChooser();

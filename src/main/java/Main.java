@@ -1,8 +1,9 @@
 import gui.baseGUI;
+import modInstaller.Game;
 
 public class Main {
     public static void main(String[] args) {
-
-        baseGUI gui = new baseGUI();
+        Game game = new Game();
+        baseGUI gui = new baseGUI(game);
     }
 }
