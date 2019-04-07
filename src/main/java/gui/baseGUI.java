@@ -56,6 +56,7 @@ public class baseGUI extends JFrame implements ActionListener {
         add(jbInstall, "cell 1 0");
         add(jbUninstall, "cell 1 1");
         add(jbCreate, "cell 1 2");
+        jbCreate.setEnabled(false);
         add(jlDescription, "cell 2 0");
         add(jlCreator, "cell 2 1");
         add(jlInstalled, "cell 0 1");
