@@ -30,5 +30,4 @@ output_log.txt.lnk
 # Ignore tests and intellij files
 .idea
 .idea/
-src/test
-src/test/
+target/test-classes/META-INF/VTOL-Mods.kotlin_module
