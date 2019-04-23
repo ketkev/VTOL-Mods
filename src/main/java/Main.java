@@ -2,8 +2,9 @@ import gui.baseGUI;
 import modInstaller.Game;
 
 public class Main {
-    public static void main(String[] args) {
-        Game game = new Game();
-        baseGUI gui = new baseGUI(game);
-    }
+
+  public static void main(String[] args) {
+    Game game = new Game();
+    baseGUI gui = new baseGUI(game);
+  }
 }
