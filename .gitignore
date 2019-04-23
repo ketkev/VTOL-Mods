@@ -26,3 +26,9 @@ hs_err_pid*
 out/
 mods/
 output_log.txt.lnk
+
+# Ignore tests and intellij files
+.idea
+.idea/
+src/test
+src/test/
