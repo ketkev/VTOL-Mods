@@ -74,7 +74,7 @@ public class baseGUI extends JFrame implements ActionListener {
             createMod createModWindow = new createMod(this);
         }
         if (e.getSource() == jbInstall) {
-            Mod.installMod(new File(Game.getGamePath() + "\\" +  selectedMod.getInstallTo()), new File(Game.getGamePath() + "\\mods\\" + selectedMod.getName() + ".mod"));
+            Mod.installMod(new File(Game.GAME_PATH + "\\" +  selectedMod.getInstallTo()), new File(Game.GAME_PATH + "\\mods\\" + selectedMod.getName() + ".mod"));
             jlInstalled.setVisible(true);
             jlInstalled.setText("Installed successfully!");
 
@@ -90,7 +90,8 @@ public class baseGUI extends JFrame implements ActionListener {
     }
 
     private void changeSelected() {
-        String selected = jcbModSelector.getSelectedItem().toString();
+        String selected = jcbModSelector.getSelectedItem()!=null ? jcbModSelector.getSelectedItem().toString() : null;
+        if(selected==null) return;
         for (Mod mod : mods) {
             if (mod.getName().equals(selected)) {
                 selectedMod = mod;

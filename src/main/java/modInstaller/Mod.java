@@ -19,7 +19,7 @@ public class Mod {
     public Mod(String name) {
         this.name = name;
         try {
-            List<String> cfg = Files.readAllLines(Paths.get(Game.getGamePath() + "\\mods\\" + name + ".cfg"));
+            List<String> cfg = Files.readAllLines(Paths.get(Game.GAME_PATH + "\\mods\\" + name + ".cfg"));
             installTo = cfg.get(0);
             description = cfg.get(1);
             creator = cfg.get(2);
@@ -42,8 +42,8 @@ public class Mod {
 
     public static void uninstallMod(String uninstallFrom) {
         try {
-            (new File(Game.getGamePath() + "\\" + uninstallFrom)).delete();
-            Files.move(Paths.get(Game.getGamePath() + "\\" + uninstallFrom.substring(0, uninstallFrom.length() - 4) + "-backup.dll"), Paths.get(Game.getGamePath() + "\\" + uninstallFrom));
+            (new File(Game.GAME_PATH + "\\" + uninstallFrom)).delete();
+            Files.move(Paths.get(Game.GAME_PATH + "\\" + uninstallFrom.substring(0, uninstallFrom.length() - 4) + "-backup.dll"), Paths.get(Game.GAME_PATH + "\\" + uninstallFrom));
         } catch (Exception ex) {
             ex.printStackTrace();
         }

@@ -7,13 +7,18 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JFileChooser;
+
 public class Game {
     private ArrayList<Mod> mods = new ArrayList<>();
     private String gameVersion = "";
+    
+    public static String GAME_PATH;
 
     public Game() {
-        if(!new File(getGamePath() + "\\mods").exists()) {
-            new File(getGamePath() + "\\mods").mkdirs();
+    	GAME_PATH = getGamePath(); //System.Exit
+        if(!new File(GAME_PATH + "\\mods").exists()) {
+            new File(GAME_PATH + "\\mods").mkdirs();
         }
 
         findMods();
@@ -21,8 +26,29 @@ public class Game {
     }
 
     public static String getGamePath() {
-        String gamePath = (new File("")).getAbsolutePath();
-        return gamePath;
+    	if(GAME_PATH!=null) {
+    		return GAME_PATH;
+    	}
+    	File gamePath = selectGameDirectory();
+    	if(gamePath==null) {
+    		System.exit(1);
+    		return null; //won't happen but papers have to be "in order"
+    	}else {
+    		return gamePath.getAbsolutePath();
+    	}
+        //String gamePath = (new File("")).getAbsolutePath();
+        
+    }
+    
+    private static File selectGameDirectory() {
+    	JFileChooser dirOpener = new JFileChooser();
+    	dirOpener.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+    	int reply = dirOpener.showOpenDialog(null); //We don't have a parent frame at the moment
+    	if(reply==JFileChooser.APPROVE_OPTION) {
+    		return dirOpener.getCurrentDirectory();
+    	}else {
+    		return null;
+    	}
     }
 
     public ArrayList<Mod> getMods() {
@@ -31,7 +57,7 @@ public class Game {
 
     public void findMods() {
         mods = new ArrayList<>();
-        File dir = new File(getGamePath() + "\\mods");
+        File dir = new File(GAME_PATH + "\\mods");
 
         File[] matches = dir.listFiles((dir1, name) -> name.endsWith(".mod"));
 

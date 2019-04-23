@@ -34,7 +34,7 @@ public class filechooser extends JDialog implements ActionListener {
         setSize(800, 600);
         setLayout(new FlowLayout());
         try {
-            fc = new JFileChooser(new File(Game.getGamePath()));
+            fc = new JFileChooser(new File(Game.GAME_PATH));
         } catch (Exception ex) {
             ex.getLocalizedMessage();
             fc = new JFileChooser();
