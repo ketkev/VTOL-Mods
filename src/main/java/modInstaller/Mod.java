@@ -33,7 +33,7 @@ public class Mod {
   }
 
   public static void generateMod(File original, File modded, String username, String description,
-      String modName) { //TODO add new functionality and cfg generation
+      String modName) {
     Game game = new Game();
     File cfgFile = new File(Game.getGamePath() + "\\mods\\" + modName + ".cfg");
     try {
